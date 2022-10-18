@@ -7,5 +7,9 @@ function addUpTO(n){
     return total;
 }
 
-a = addUpTO(6)
-console.log(a)
+var t1 = performance.now();
+a = addUpTO(1000000000);
+var t2 = performance.now();
+console.log(a);
+b = (t2-t1)/1000;
+console.log("Time Elapsed:"+ b +" seconds");
