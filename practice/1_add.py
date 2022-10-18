@@ -11,4 +11,5 @@ d = add(6)
 b = t.timeit()
 time = b-a
 print(d)
-print("Time Elapsed is {} seconds".format(time))
+print(f"Time Elapsed is {time} seconds")
+print("Time Elapsed {} seconda.".format(time))
