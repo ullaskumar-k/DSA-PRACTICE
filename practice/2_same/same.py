@@ -5,6 +5,7 @@
 #  same([1,2,3],[1,9]) //false
 #  same([1,2,1],[4,4,1]) //false (must be same frequency) 
 
+import timeit as t
 # 1st try
 # def same(a,b):
 #     if len(a) != len(b):
@@ -30,6 +31,11 @@ def same(a,b):
         b.pop(d)
     return True    
 
-v = same([1,2,3],[4,1,9])
-print(v)                    
+a = t.timeit()
 
+v = same([1,2,3],[4,1,9])
+print(v)                   
+    
+b = t.timeit()
+time = b-a
+print(f"Time Elapsed is {time} seconds")
