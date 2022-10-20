@@ -9,42 +9,47 @@
 # validAnagram("qwerty","qeywrt") // true 
 # validAnagram("texttwisttime","timetwisttext") // true
 
+# def validAnagram(a,b):
+#     if len(a) != len(b):
+#         return False
+#     fc1 = {}
+#     fc2 = {}
+#     try:
+#         for i in a:
+#             fc1.update({i:(fc1.get(i) or 0)+1})
+#     except:
+#         pass
+#     try:
+#         for i in b:
+#             fc2.update({i:(fc2.get(i) or 0)+1})
+#     except:
+#         pass
+#     k = list(fc1.keys())
+#     l = list(fc2.keys())
+#     for i in k:
+#         try:
+#             if(not(i in l)):
+#                 return False
+#             if(not(fc1.get[i] == fc2.get[i])):
+#                 return False    
+#         except:
+#             pass
+#     return True    
+
+
+
+
 def validAnagram(a,b):
     if len(a) != len(b):
         return False
-    fc1 = {}
-    fc2 = {}
-    try:
-        for i in a:
-            fc1.update({i:(fc1.get(i) or 0)+1})
-    except:
-        pass
-    try:
-        for i in b:
-            fc2.update({i:(fc2.get(i) or 0)+1})
-    except:
-        pass
-    k = list(fc1.keys())
-    l = list(fc2.keys())
-    for i in k:
-        try:
-            if(not(i in l)):
-                return False
-            if(not(fc1.get[i] == fc2.get[i])):
-                return False    
-        except:
-            pass
-    return True    
-
-
-# v = validAnagram("","") #true
-# v = validAnagram("aaz","zza") #false
-# v = validAnagram("anagram","nagaram") #true
-# v = validAnagram("rat","car") #false
-# v = validAnagram("awesome","awesom") #false
-#v = validAnagram("qwerty","qeywrt") #true 
-#v = validAnagram("texttwisttime","timetwisttext") #true
+    a = list(a)
+    b = list(b)
+    for i in a:
+        if i in b:
+            b.remove(i)
+    if(len(b)):
+        return False
+    return True     
 
 v = validAnagram("rar","raa")
 print(v)
-
