@@ -5,18 +5,31 @@
 #  same([1,2,3],[1,9]) //false
 #  same([1,2,1],[4,4,1]) //false (must be same frequency) 
 
+# 1st try
+# def same(a,b):
+#     if len(a) != len(b):
+#         return False
+#     count = 0    
+#     for i in a:
+#         for j in b:
+#             if i ** 2 == j:
+#                 count += 1
+#     if count == len(a):
+#         return True
+#     return False
+
+
 def same(a,b):
     if len(a) != len(b):
-        return False
-    count = 0    
+        return False    
     for i in a:
-        for j in b:
-            if i ** 2 == j:
-                count += 1
-    if count == len(a):
-        return True
-    return False
+        try:
+            d = b.index(i**2)
+        except:
+            return False    
+        b.pop(d)
+    return True    
 
-v = same([1,2,1],[4,4,1])
+v = same([1,2,3],[4,1,9])
 print(v)                    
 
