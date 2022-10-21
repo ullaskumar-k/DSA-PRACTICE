@@ -48,8 +48,9 @@ function countUniqueValues(a){
             b.push(a[i]);
          }
       }
+      j++;
    }
    console.log(b.length)
 }
   
-  countUniqueValues([-2,-1,-1,0,1]);
+  countUniqueValues([1,2,3,4,4,4,7,7,12,12,13]);
