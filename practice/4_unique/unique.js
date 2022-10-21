@@ -8,3 +8,28 @@
 // countUniqueValues([]) //0
 // countUniqueValues([-2,-1,-1,0,1]) //4
 
+function countUniqueValues(a){
+   let count = 0;
+   let i = -1;
+   let j = 1;
+   for(let k = 0; k<a.length;k++){
+     if(k==0){
+        if(a[k]!=a[j]){
+           count += 1;
+        }
+     }
+     if(k==a.length-1){
+        if(a[i]!=a[k]){
+           count += 1;
+        }
+     }
+     if(k!=0 && k!=a.length-1 && a[i]!=a[k] && a[k]!=a[j]){
+        count += 1;
+     }
+     i += 1;
+     j += 1;
+   }
+   console.log(count);
+  }
+  
+  countUniqueValues([2,2,3,3,1,1,1]);
