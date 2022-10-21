@@ -32,4 +32,4 @@ function countUniqueValues(a){
    console.log(count);
   }
   
-  countUniqueValues([2,2,3,3,1,1,1]);
+  countUniqueValues([-2,-1,-1,0,1]);
